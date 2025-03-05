@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "GestorEventos",
+    'name': "Gestor de Eventos",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Módulo para la gestion de eventos de la asociación de vecinos.",
 
     'description': """
-Long description of module's purpose
+        Módulo en Odoo para la gestión de eventos, incluyendo:
+        - Creación de eventos
+        - Generación de tickets con QR
+        - Control de asistencia
+        - Gestión de ingresos y gastos
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "Leandro Struni",
+    'website': "https://github.com/LeanEmanuel",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -30,5 +34,7 @@ Long description of module's purpose
     'demo': [
         'demo/demo.xml',
     ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
 }
-
