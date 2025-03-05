@@ -1,0 +1,66 @@
+# Archivos de Python compilados y caché
+__pycache__/
+*.py[cod]
+*.so
+*.swp
+*.swo
+
+# Configuración de entornos virtuales y dependencias locales
+venv/
+.env
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Configuración de Odoo específica
+odoo/addons/.temp/
+odoo/addons/.local/
+odoo/addons/__pycache__/
+odoo/addons/*/migrations/ __pycache__/
+odoo/addons/*/static/lib/*  # Si usas librerías externas en static/
+
+# Archivos de bases de datos temporales
+*.log
+*.db
+*.sqlite
+*.bak
+*.sql
+*.csv
+*.dump
+
+# Archivos de logs y caché de Odoo
+*.log
+*.log.*
+odoo/.local/
+odoo/.cache/
+odoo/.vscode/
+odoo/.idea/
+odoo/.mypy_cache/
+odoo/.pytest_cache/
+
+# Reportes y archivos temporales
+*.DS_Store
+*.~lock.*
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
+*.swo
+
+# Archivos de compilación
+*.mo
+*.po~
+*.pot~
+
+# Archivos de Docker (si usas Docker)
+docker-compose.override.yml
+.dockerignore
+
+# Archivos de configuración de IDEs (PyCharm, VS Code, etc.)
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
