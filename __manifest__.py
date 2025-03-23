@@ -33,6 +33,7 @@
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
+        'views/event_views.xml',
     ],
     'installable': True,
     'auto_install': False,
