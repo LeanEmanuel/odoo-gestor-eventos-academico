@@ -27,13 +27,14 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        # 'views/views.xml',
+        # 'views/templates.xml',
+        'views/event_views.xml',
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
-        'views/event_views.xml',
     ],
     'installable': True,
     'auto_install': False,
