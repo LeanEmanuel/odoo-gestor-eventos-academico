@@ -29,6 +29,7 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/event_views.xml',
+        'views/ticket_views.xml',
         'views/menu.xml',
         # 'views/views.xml',
         # 'views/templates.xml',
