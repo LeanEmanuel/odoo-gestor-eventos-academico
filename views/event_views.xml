@@ -30,6 +30,17 @@
                         <field name="capacity"/>
                         <field name="active"/>
                     </group>
+                    <notebook>
+                        <page string="Entradas">
+                            <field name="tickets">
+                                <list editable="bottom">
+                                    <field name="ticket_type"/>
+                                    <field name="price"/>
+                                    <field name="status"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
