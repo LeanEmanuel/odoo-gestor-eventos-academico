@@ -25,5 +25,10 @@
             <field name="name">gestor.assistant</field>
             <field name="model">gestor.assistant</field>
         </record>
+
+        <record id="model_gestor_category" model="ir.model">
+            <field name="name">gestor.category</field>
+            <field name="model">gestor.category</field>
+        </record>
     </data>
 </odoo>

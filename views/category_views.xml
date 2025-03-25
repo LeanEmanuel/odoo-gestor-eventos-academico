@@ -5,10 +5,10 @@
         <field name="name">gestor.category.list</field>
         <field name="model">gestor.category</field>
         <field name="arch" type="xml">
-            <tree string="Categorías">
+            <list string="Categorías">
                 <field name="name"/>
                 <field name="description"/>
-            </tree>
+            </list>
         </field>
     </record>
 
