@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Lista -->
+    <record id="view_category_list" model="ir.ui.view">
+        <field name="name">gestor.category.list</field>
+        <field name="model">gestor.category</field>
+        <field name="arch" type="xml">
+            <tree string="Categorías">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Formulario -->
+    <record id="view_category_form" model="ir.ui.view">
+        <field name="name">gestor.category.form</field>
+        <field name="model">gestor.category</field>
+        <field name="arch" type="xml">
+            <form string="Categoría">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para mostrar vista -->
+    <record id="action_category_list" model="ir.actions.act_window">
+        <field name="name">Categorías</field>
+        <field name="res_model">gestor.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

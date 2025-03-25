@@ -32,6 +32,13 @@
               action="action_event_event"
               sequence="10"/>
 
+    <!-- Submenú Categorias -->
+    <menuitem id="menu_event_category"
+              name="Categorías"
+              parent="menu_eventos"
+              action="action_category_list"
+              sequence="20"/>
+
     <!-- ======= MENÚ ENTRADAS ======= -->
 
     <!-- Menú padre de Entradas (sin acción directa) -->
