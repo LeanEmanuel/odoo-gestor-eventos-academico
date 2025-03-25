@@ -17,6 +17,7 @@ class Event(models.Model):
 
     tickets = fields.One2many('gestor.ticket', 'event_id', string='Entradas')
     assistants = fields.One2many('gestor.assistant', 'event_id', string='Asistentes')
+    category_id = fields.Many2one('gestor.category', string='Categoría')
 
     status = fields.Selection([
         ('draft', 'Borrador'),
