@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Vista de lista de tickets -->
     <record id="view_ticket_list" model="ir.ui.view">
         <field name="name">gestor.ticket.list</field>
         <field name="model">gestor.ticket</field>
@@ -14,6 +15,7 @@
         </field>
     </record>
 
+    <!-- Vista de formulario de tickets -->
     <record id="view_ticket_form" model="ir.ui.view">
         <field name="name">gestor.ticket.form</field>
         <field name="model">gestor.ticket</field>
@@ -21,11 +23,14 @@
             <form string="Ticket">
                 <sheet>
                     <group>
+                        <field name="code" readonly="1"/>
+                        <field name="status"/>
                         <field name="ticket_type"/>
                         <field name="price"/>
-                        <field name="status"/>
                         <field name="event_id"/>
-                        <field name="qr_code" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group string="Código QR" col="1">
+                        <field name="qr_code" widget="image" class="oe_avatar" readonly="1"/>
                     </group>
                 </sheet>
             </form>

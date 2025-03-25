@@ -17,6 +17,13 @@ class Event(models.Model):
 
     tickets = fields.One2many('gestor.ticket', 'event_id', string='Entradas')
 
+    status = fields.Selection([
+        ('draft', 'Borrador'),
+        ('confirmed', 'Confirmado'),
+        ('done', 'Finalizado'),
+        ('cancelled', 'Cancelado'),
+    ], string='Estado', default='draft')
+
     _sql_constraints = [
         ('name_unique', 'unique(name)', 'Ya existe un evento con este nombre.')
     ]
