@@ -28,6 +28,8 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'views/tag_views.xml',
+        'views/category_views.xml',
         'views/assistant_views.xml',
         'views/event_views.xml',
         'views/ticket_views.xml',

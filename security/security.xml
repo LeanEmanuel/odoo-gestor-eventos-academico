@@ -14,16 +14,31 @@
         <record id="model_gestor_event" model="ir.model">
             <field name="name">gestor.event</field>
             <field name="model">gestor.event</field>
+            <field name="state">base</field>
         </record>
 
         <record id="model_gestor_ticket" model="ir.model">
             <field name="name">gestor.ticket</field>
             <field name="model">gestor.ticket</field>
+            <field name="state">base</field>
         </record>
 
         <record id="model_gestor_assistant" model="ir.model">
             <field name="name">gestor.assistant</field>
             <field name="model">gestor.assistant</field>
+            <field name="state">base</field>
+        </record>
+
+        <record id="model_gestor_category" model="ir.model">
+            <field name="name">gestor.category</field>
+            <field name="model">gestor.category</field>
+            <field name="state">base</field>
+        </record>
+
+        <record id="model_gestor_tag" model="ir.model">
+            <field name="name">gestor.tag</field>
+            <field name="model">gestor.tag</field>
+            <field name="state">base</field>
         </record>
     </data>
 </odoo>

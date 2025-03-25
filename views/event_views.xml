@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <list string="Eventos">
                 <field name="name"/>
+                <field name="category_id"/>
                 <field name="date_start"/>
                 <field name="date_end"/>
                 <field name="location"/>
@@ -26,6 +27,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="category_id"/>
                         <field name="status"/>
                     </group>
                     <group string="Fechas y lugar">
@@ -36,6 +38,7 @@
                     <group string="Detalles">
                         <field name="capacity"/>
                         <field name="active"/>
+                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         <field name="description"/>
                     </group>
                     <notebook>
