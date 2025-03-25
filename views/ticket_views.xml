@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista de lista de tickets -->
+    <record id="view_ticket_list" model="ir.ui.view">
+        <field name="name">gestor.ticket.list</field>
+        <field name="model">gestor.ticket</field>
+        <field name="arch" type="xml">
+            <list string="Tickets">
+                <field name="code"/>
+                <field name="ticket_type"/>
+                <field name="price"/>
+                <field name="status"/>
+                <field name="event_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario de tickets -->
+    <record id="view_ticket_form" model="ir.ui.view">
+        <field name="name">gestor.ticket.form</field>
+        <field name="model">gestor.ticket</field>
+        <field name="arch" type="xml">
+            <form string="Ticket">
+                <sheet>
+                    <group>
+                        <field name="code" readonly="1"/>
+                        <field name="status"/>
+                        <field name="ticket_type"/>
+                        <field name="price"/>
+                        <field name="event_id"/>
+                    </group>
+                    <group string="Código QR" col="1">
+                        <field name="qr_code" widget="image" class="oe_avatar" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Asistente">
+                            <field name="assistant_id">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="email"/>
+                                    <field name="dni"/>
+                                    <field name="check_in"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

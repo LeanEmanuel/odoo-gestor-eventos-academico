@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vista de lista de asistentes -->
+    <record id="view_assistant_list" model="ir.ui.view">
+        <field name="name">gestor.assistant.list</field>
+        <field name="model">gestor.assistant</field>
+        <field name="arch" type="xml">
+            <list string="Asistentes">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="dni"/>
+                <field name="check_in"/>
+                <field name="check_in_time"/>
+                <field name="event_id"/>
+                <field name="ticket_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario de asistente -->
+    <record id="view_assistant_form" model="ir.ui.view">
+        <field name="name">gestor.assistant.form</field>
+        <field name="model">gestor.assistant</field>
+        <field name="arch" type="xml">
+            <form string="Asistente">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="dni"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                    </group>
+                    <group string="Asistencia">
+                        <field name="check_in"/>
+                        <field name="check_in_time"/>
+                    </group>
+                    <group string="Relacionado con">
+                        <field name="event_id"/>
+                        <field name="ticket_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
