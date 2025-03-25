@@ -1,6 +1,6 @@
 from odoo import models, fields
 
-class GestorTag(models.Model):
+class Tag(models.Model):
     _name = 'gestor.tag'
     _description = 'Etiqueta para eventos'
     _rec_name = 'name'

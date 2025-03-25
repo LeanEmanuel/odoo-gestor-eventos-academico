@@ -14,7 +14,12 @@ class Event(models.Model):
     location = fields.Char('Ubicación')
     capacity = fields.Integer('Capacidad máxima')
     active = fields.Boolean('Activo', default=True)
-
+    tag_ids = fields.Many2many(
+        'gestor.tag',
+        string='Etiquetas',
+        help='Etiquetas asignadas al evento'
+    )
+    # Relaciones
     tickets = fields.One2many('gestor.ticket', 'event_id', string='Entradas')
     assistants = fields.One2many('gestor.assistant', 'event_id', string='Asistentes')
     category_id = fields.Many2one('gestor.category', string='Categoría')

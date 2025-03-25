@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-
     <!-- Vista de lista -->
     <record id="view_tag_list" model="ir.ui.view">
         <field name="name">gestor.tag.list</field>
@@ -22,7 +21,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="color"/>
+                        <field name="color" widget="color"/>
                     </group>
                 </sheet>
             </form>
@@ -35,5 +34,4 @@
         <field name="res_model">gestor.tag</field>
         <field name="view_mode">list,form</field>
     </record>
-
 </odoo>
