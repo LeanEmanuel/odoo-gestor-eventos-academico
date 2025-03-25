@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_ticket_list" model="ir.ui.view">
-        <field name="name">event.ticket.list</field>
-        <field name="model">event.ticket</field>
+        <field name="name">gestor.ticket.list</field>
+        <field name="model">gestor.ticket</field>
         <field name="arch" type="xml">
             <list string="Tickets">
+                <field name="code"/>
                 <field name="ticket_type"/>
                 <field name="price"/>
                 <field name="status"/>
@@ -14,8 +15,8 @@
     </record>
 
     <record id="view_ticket_form" model="ir.ui.view">
-        <field name="name">event.ticket.form</field>
-        <field name="model">event.ticket</field>
+        <field name="name">gestor.ticket.form</field>
+        <field name="model">gestor.ticket</field>
         <field name="arch" type="xml">
             <form string="Ticket">
                 <sheet>
@@ -24,7 +25,7 @@
                         <field name="price"/>
                         <field name="status"/>
                         <field name="event_id"/>
-                        <field name="qr_code"/>
+                        <field name="qr_code" widget="image" class="oe_avatar"/>
                     </group>
                 </sheet>
             </form>
