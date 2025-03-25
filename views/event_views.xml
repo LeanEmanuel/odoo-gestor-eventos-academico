@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Vista de lista de eventos -->
     <record id="view_event_list" model="ir.ui.view">
-        <field name="name">event.event.list</field>
-        <field name="model">event.event</field>
+        <field name="name">gestor.event.list</field>
+        <field name="model">gestor.event</field>
         <field name="arch" type="xml">
             <list string="Eventos">
                 <field name="name"/>
@@ -10,30 +11,38 @@
                 <field name="date_end"/>
                 <field name="location"/>
                 <field name="capacity"/>
+                <field name="status"/>
                 <field name="active"/>
             </list>
         </field>
     </record>
 
+    <!-- Vista de formulario de eventos -->
     <record id="view_event_form" model="ir.ui.view">
-        <field name="name">event.event.form</field>
-        <field name="model">event.event</field>
+        <field name="name">gestor.event.form</field>
+        <field name="model">gestor.event</field>
         <field name="arch" type="xml">
             <form string="Evento">
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="description"/>
+                        <field name="status"/>
+                    </group>
+                    <group string="Fechas y lugar">
                         <field name="date_start"/>
                         <field name="date_end"/>
                         <field name="location"/>
+                    </group>
+                    <group string="Detalles">
                         <field name="capacity"/>
                         <field name="active"/>
+                        <field name="description"/>
                     </group>
                     <notebook>
                         <page string="Entradas">
                             <field name="tickets">
                                 <list editable="bottom">
+                                    <field name="code"/>
                                     <field name="ticket_type"/>
                                     <field name="price"/>
                                     <field name="status"/>
