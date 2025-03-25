@@ -38,6 +38,7 @@
                     <group string="Detalles">
                         <field name="capacity"/>
                         <field name="active"/>
+                        <field name="tag_ids" widget="many2many_tags"/>
                         <field name="description"/>
                     </group>
                     <notebook>
