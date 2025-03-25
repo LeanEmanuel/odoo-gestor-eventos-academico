@@ -49,6 +49,17 @@
                                 </list>
                             </field>
                         </page>
+                        <!--<page string="Asistentes">
+                            <field name="assistants">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="email"/>
+                                    <field name="phone"/>
+                                    <field name="check_in"/>
+                                    <field name="check_in_time"/>
+                                </list>
+                            </field>
+                        </page>-->
                     </notebook>
                 </sheet>
             </form>

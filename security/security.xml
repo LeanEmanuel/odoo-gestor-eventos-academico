@@ -20,5 +20,10 @@
             <field name="name">gestor.ticket</field>
             <field name="model">gestor.ticket</field>
         </record>
+
+        <record id="model_gestor_assistant" model="ir.model">
+            <field name="name">gestor.assistant</field>
+            <field name="model">gestor.assistant</field>
+        </record>
     </data>
 </odoo>

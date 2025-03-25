@@ -32,6 +32,18 @@
                     <group string="Código QR" col="1">
                         <field name="qr_code" widget="image" class="oe_avatar" readonly="1"/>
                     </group>
+                    <notebook>
+                        <page string="Asistente">
+                            <field name="assistant_id">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="email"/>
+                                    <field name="dni"/>
+                                    <field name="check_in"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

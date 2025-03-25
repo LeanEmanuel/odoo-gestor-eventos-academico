@@ -54,4 +54,25 @@
               action="action_ticket_list"
               sequence="10"/>
 
+    <!-- ======= MENÚ ASISTENTES ======= -->
+
+    <!-- Menú padre de Asistentes-->
+    <menuitem id="menu_assistant_root"
+              name="Asistentes"
+              parent="menu_gestor_eventos_root"
+              sequence="30"/>
+
+    <!-- Acción para vistas de asistentes -->
+    <record id="action_assistant_list" model="ir.actions.act_window">
+        <field name="name">Asistentes</field>
+        <field name="res_model">gestor.assistant</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Submenú Asistentes-->
+    <menuitem id="menu_assistant_sub"
+              name="Ver asistentes"
+              parent="menu_assistant_root"
+              action="action_assistant_list"
+              sequence="10"/>
 </odoo>

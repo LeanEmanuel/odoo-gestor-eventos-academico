@@ -23,7 +23,9 @@ class Ticket(models.Model):
         ('cancelled', 'Cancelada'),
     ], string='Estado', default='available')
 
+    # Relaciones
     event_id = fields.Many2one('gestor.event', string='Evento relacionado', required=True, ondelete='cascade')
+    assistant_id = fields.Many2one('gestor.assistant', string='Asistente', ondelete='set null')
 
     @api.model
     def create(self, vals):
