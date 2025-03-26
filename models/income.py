@@ -17,4 +17,3 @@ class Income(models.Model):
     # Relaciones
     event_id = fields.Many2one('gestor.event', string='Evento Relacionado', required=True, ondelete='cascade')
     ticket_id = fields.Many2one('gestor.ticket', string='Ticket Asociado', ondelete='set null')
-    
