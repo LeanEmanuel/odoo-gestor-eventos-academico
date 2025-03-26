@@ -89,4 +89,17 @@
               parent="menu_assistant_root"
               action="action_assistant_list"
               sequence="10"/>
+
+    <!-- ======= MENÚ FINANZAS ======= -->
+    <menuitem id="menu_finanzas"
+              name="Finanzas"
+              parent="menu_gestor_eventos_root"
+              sequence="40"/>
+
+    <!-- Submenú: Ingresos -->
+    <menuitem id="menu_ingresos"
+              name="Ingresos"
+              parent="menu_finanzas"
+              action="action_income_list"
+              sequence="10"/>
 </odoo>
