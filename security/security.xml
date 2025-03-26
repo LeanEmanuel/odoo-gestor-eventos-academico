@@ -40,5 +40,11 @@
             <field name="model">gestor.tag</field>
             <field name="state">base</field>
         </record>
+
+        <record id="model_gestor_income" model="ir.model">
+            <field name="name">gestor.income</field>
+            <field name="model">gestor.income</field>
+            <field name="state">base</field>
+        </record>
     </data>
 </odoo>

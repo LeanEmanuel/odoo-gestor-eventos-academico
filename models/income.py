@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class Income(models.Model):
-    _name = 'gestor_income'
+    _name = 'gestor.income'
     _description = 'Ingreso de Evento'
     _rec_name = 'concept'
 
