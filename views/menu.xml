@@ -102,4 +102,11 @@
               parent="menu_finanzas"
               action="action_income_list"
               sequence="10"/>
+
+    <!-- Submenú: Gastos -->
+    <menuitem id="menu_gastos"
+              name="Gastos"
+              parent="menu_finanzas"
+              action="action_expense_list"
+              sequence="20"/>
 </odoo>
