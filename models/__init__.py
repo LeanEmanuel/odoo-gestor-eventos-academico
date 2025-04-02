@@ -6,3 +6,5 @@ from . import ticket
 from . import assistant
 from . import category
 from . import tag
+from . import income
+from . import expense
