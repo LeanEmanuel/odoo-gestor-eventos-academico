@@ -52,5 +52,11 @@
             <field name="model">gestor.expense</field>
             <field name="state">base</field>
         </record>
+
+        <record id="model_gestor_supplier" model="ir.model">
+            <field name="name">gestor.supplier</field>
+            <field name="model">gestor.supplier</field>
+            <field name="state">base</field>
+        </record>
     </data>
 </odoo>

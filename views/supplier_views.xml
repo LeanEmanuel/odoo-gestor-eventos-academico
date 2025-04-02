@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vista de lista de proveedores -->
+    <record id="view_supplier_list" model="ir.ui.view">
+        <field name="name">gestor.supplier.list</field>
+        <field name="model">gestor.supplier</field>
+        <field name="arch" type="xml">
+            <list string="Proveedores">
+                <field name="name"/>
+                <field name="contact_name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="address"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario de proveedores -->
+    <record id="view_supplier_form" model="ir.ui.view">
+        <field name="name">gestor.supplier.form</field>
+        <field name="model">gestor.supplier</field>
+        <field name="arch" type="xml">
+            <form string="Proveedor">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="contact_name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="address"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para acceder a los proveedores -->
+    <record id="action_supplier_list" model="ir.actions.act_window">
+        <field name="name">Proveedores</field>
+        <field name="res_model">gestor.supplier</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
