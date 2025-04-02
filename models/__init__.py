@@ -8,3 +8,4 @@ from . import category
 from . import tag
 from . import income
 from . import expense
+from . import supplier

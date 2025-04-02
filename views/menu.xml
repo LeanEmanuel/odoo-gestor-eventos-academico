@@ -109,7 +109,7 @@
               parent="menu_finanzas"
               action="action_expense_list"
               sequence="20"/>
-    
+
     <!-- Submenú: Proveedores -->
     <menuitem id="menu_proveedores"
               name="Proveedores"
