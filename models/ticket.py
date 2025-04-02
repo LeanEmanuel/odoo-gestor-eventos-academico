@@ -15,7 +15,7 @@ class Ticket(models.Model):
 
     ticket_type = fields.Char(string='Tipo de ticket', required=True)
     price = fields.Float(string='Precio', required=True)
-    code = fields.Char(string='Codigo único', required=True, readonly=True, copy=False)
+    code = fields.Char(string='Codigo único', required=False, readonly=True, copy=False)
     qr_code = fields.Binary(string='QR Code')
     status = fields.Selection([
         ('available', 'Disponible'),
