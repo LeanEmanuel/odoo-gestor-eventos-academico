@@ -28,6 +28,7 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'views/expense_views.xml',
         'views/income_views.xml',
         'views/tag_views.xml',
         'views/category_views.xml',
