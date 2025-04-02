@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-7
 from odoo import models, fields
 
+
 class Expense(models.Model):
     _name = 'gestor.expense'
     _description = 'Gastos del Evento'
@@ -18,3 +19,4 @@ class Expense(models.Model):
     notes = fields.Text(string='Notas')
 
     event_id = fields.Many2one('gestor.event', string='Evento Relacionado', ondelete='set null')
+    supplier_id = fields.Many2one('gestor.supplier', string="Proveedor")
