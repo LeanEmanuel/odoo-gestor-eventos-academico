@@ -3,7 +3,7 @@ from odoo import models, fields
 
 class Income(models.Model):
     _name = 'gestor.income'
-    _description = 'Ingreso de Evento'
+    _description = 'Ingresos de Evento'
     _rec_name = 'concept'
 
     concept = fields.Char(string='Concepto', required=True)
