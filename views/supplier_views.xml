@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <list string="Proveedores">
                 <field name="name"/>
-                <field name="contact_person"/>
+                <field name="contact_name"/>
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="address"/>
@@ -25,7 +25,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="contact_person"/>
+                        <field name="contact_name"/>
                         <field name="email"/>
                         <field name="phone"/>
                         <field name="address"/>
@@ -40,6 +40,6 @@
     <record id="action_supplier_list" model="ir.actions.act_window">
         <field name="name">Proveedores</field>
         <field name="res_model">gestor.supplier</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>
