@@ -15,12 +15,13 @@ class Ticket(models.Model):
 
     ticket_type = fields.Char(string='Tipo de ticket', required=True)
     price = fields.Float(string='Precio', required=True)
-    code = fields.Char(string='Codigo único', required=False, readonly=True, copy=False)
+    code = fields.Char(string='Codigo único', required=False, readonly=True, copy=False, index=True)
     qr_code = fields.Binary(string='QR Code')
     status = fields.Selection([
         ('available', 'Disponible'),
         ('sold', 'Vendida'),
         ('cancelled', 'Cancelada'),
+        ('validated','Validado'),
     ], string='Estado', default='available')
 
     # Relaciones
