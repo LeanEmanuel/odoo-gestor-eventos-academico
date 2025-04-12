@@ -35,3 +35,17 @@ class Event(models.Model):
     _sql_constraints = [
         ('name_unique', 'unique(name)', 'Ya existe un evento con este nombre.')
     ]
+
+    income_ids = fields.One2many('gestor.income', 'event_id', string='Ingresos')
+    expense_ids = fields.One2many('gestor.expense', 'event_id', string='Gastos')
+    
+    total_income = fields.Float(string='Total Ingresos', compute='_compute_financials', store=True)
+    total_expense = fields.Float(string='Total Gastos', compute='_compute_financials', store=True)
+    balance = fields.Float(string='Balance', compute='_compute_financials', store=True)
+
+    @api.depends('income_ids.amount', 'expense_ids.amount')
+    def _compute_financials(self):
+        for event in self:
+            event.total_income = sum(event.income_ids.mapped('amount'))
+            event.total_expense = sum(event.expense_ids.mapped('amount'))
+            event.balance = event.total_income - event.total_expense
