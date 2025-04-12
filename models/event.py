@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields
+from odoo import models, fields, api
+
+
 
 
 class Event(models.Model):
@@ -24,6 +26,8 @@ class Event(models.Model):
     assistants = fields.One2many('gestor.assistant', 'event_id', string='Asistentes')
     category_id = fields.Many2one('gestor.category', string='Categoría')
     tag_ids = fields.Many2many('gestor.tag', string='Etiquetas')
+    income_ids = fields.One2many('gestor.income', 'event_id', string='Ingresos')
+    expense_ids = fields.One2many('gestor.expense', 'event_id', string='Gastos')
 
     status = fields.Selection([
         ('draft', 'Borrador'),
@@ -32,13 +36,7 @@ class Event(models.Model):
         ('cancelled', 'Cancelado'),
     ], string='Estado', default='draft')
 
-    _sql_constraints = [
-        ('name_unique', 'unique(name)', 'Ya existe un evento con este nombre.')
-    ]
-
-    income_ids = fields.One2many('gestor.income', 'event_id', string='Ingresos')
-    expense_ids = fields.One2many('gestor.expense', 'event_id', string='Gastos')
-
+    # Campos calculados financieros
     total_income = fields.Float(string='Total Ingresos', compute='_compute_financials', store=True)
     total_expense = fields.Float(string='Total Gastos', compute='_compute_financials', store=True)
     balance = fields.Float(string='Balance', compute='_compute_financials', store=True)
@@ -49,3 +47,10 @@ class Event(models.Model):
             event.total_income = sum(event.income_ids.mapped('amount'))
             event.total_expense = sum(event.expense_ids.mapped('amount'))
             event.balance = event.total_income - event.total_expense
+
+    _sql_constraints = [
+        ('name_unique', 'unique(name)', 'Ya existe un evento con este nombre.')
+    ]
+
+
+
