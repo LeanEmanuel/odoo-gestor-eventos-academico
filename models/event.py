@@ -38,7 +38,7 @@ class Event(models.Model):
 
     income_ids = fields.One2many('gestor.income', 'event_id', string='Ingresos')
     expense_ids = fields.One2many('gestor.expense', 'event_id', string='Gastos')
-    
+
     total_income = fields.Float(string='Total Ingresos', compute='_compute_financials', store=True)
     total_expense = fields.Float(string='Total Gastos', compute='_compute_financials', store=True)
     balance = fields.Float(string='Balance', compute='_compute_financials', store=True)

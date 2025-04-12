@@ -41,6 +41,11 @@
                         <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         <field name="description"/>
                     </group>
+                    <group string="Resumen financiero">
+                        <field name="total_income" readonly="1"/>
+                        <field name="total_expense" readonly="1"/>
+                        <field name="balance" readonly="1"/>
+                    </group>
                     <notebook>
                         <page string="Entradas">
                             <field name="tickets">
