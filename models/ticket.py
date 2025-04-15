@@ -52,4 +52,6 @@ class Ticket(models.Model):
                 img.save(buffer, format='PNG')
                 qr_image = base64.b64encode(buffer.getvalue())
                 record.qr_code = qr_image
-# modificar campo tipo de ticket por desplegable, mostrar code de ticket en interfaz
+
+
+

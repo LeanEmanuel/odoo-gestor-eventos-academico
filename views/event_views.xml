@@ -54,6 +54,9 @@
                                 class="btn-primary"
                                 icon="fa-ticket"/>
                     </group>
+                    <group string="Cartel del evento">
+                        <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image'}"/>
+                    </group>
                     <notebook>
                         <page string="Entradas">
                             <field name="tickets">

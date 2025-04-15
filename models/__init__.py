@@ -9,3 +9,4 @@ from . import tag
 from . import income
 from . import expense
 from . import supplier
+from . import ticket_pdf_generator

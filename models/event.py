@@ -27,6 +27,7 @@ class Event(models.Model):
         string='Etiquetas',
         help='Etiquetas asignadas al evento'
     )
+    image = fields.Binary(string='Cartel del evento', attachment=True)
 
     # Relaciones
     tickets = fields.One2many('gestor.ticket', 'event_id', string='Entradas')
