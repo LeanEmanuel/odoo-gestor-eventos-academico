@@ -36,6 +36,7 @@
         'views/assistant_views.xml',
         'views/event_views.xml',
         'views/ticket_views.xml',
+        'views/ticket_pdf_button.xml',
         'views/menu.xml',
         # 'views/views.xml',
         # 'views/templates.xml',

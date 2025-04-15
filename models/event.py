@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 
+from odoo.exceptions import UserError
 
 
 
@@ -15,12 +16,19 @@ class Event(models.Model):
     date_end = fields.Datetime('Fecha y hora de finalización', required=True)
     location = fields.Char('Ubicación')
     capacity = fields.Integer('Capacidad máxima')
+    ticket_generation_qty = fields.Integer(
+        string='Cantidad de tickets a generar',
+        default=1,
+        help="Número de tickets que se generaran para este evento."
+    )
     active = fields.Boolean('Activo', default=True)
     tag_ids = fields.Many2many(
         'gestor.tag',
         string='Etiquetas',
         help='Etiquetas asignadas al evento'
     )
+    image = fields.Binary(string='Cartel del evento', attachment=True)
+
     # Relaciones
     tickets = fields.One2many('gestor.ticket', 'event_id', string='Entradas')
     assistants = fields.One2many('gestor.assistant', 'event_id', string='Asistentes')
@@ -41,6 +49,20 @@ class Event(models.Model):
     total_expense = fields.Float(string='Total Gastos', compute='_compute_financials', store=True)
     balance = fields.Float(string='Balance', compute='_compute_financials', store=True)
 
+    def generate_tickets(self):
+        for event in self:
+            quantity = event.ticket_generation_qty
+            if quantity <= 0:
+                raise UserError(_("La cantidad de tickets debe ser mayor que 0."))
+
+            Ticket = self.env['gestor.ticket']
+            for _ in range(quantity):
+                Ticket.create({
+                    'ticket_type': 'General',
+                    'price': 0.0,
+                    'event_id': event.id
+                })
+
     @api.depends('income_ids.amount', 'expense_ids.amount')
     def _compute_financials(self):
         for event in self:
@@ -51,6 +73,3 @@ class Event(models.Model):
     _sql_constraints = [
         ('name_unique', 'unique(name)', 'Ya existe un evento con este nombre.')
     ]
-
-
-

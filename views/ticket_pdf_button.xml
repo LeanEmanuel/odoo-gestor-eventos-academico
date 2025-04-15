@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_ticket_form_pdf" model="ir.ui.view">
+        <field name="name">gestor.ticket.form.pdf</field>
+        <field name="model">gestor.ticket</field>
+        <field name="inherit_id" ref="gestor_eventos.view_ticket_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <button name="generate_pdf_ticket"
+                        string="Generar PDF Personalizado"
+                        type="object"
+                        class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

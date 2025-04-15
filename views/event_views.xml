@@ -46,6 +46,17 @@
                         <field name="total_expense" readonly="1"/>
                         <field name="balance" readonly="1"/>
                     </group>
+                    <group string="Generar tickets">
+                        <field name="ticket_generation_qty"/>
+                        <button name="generate_tickets"
+                                type="object"
+                                string="Generar tickets"
+                                class="btn-primary"
+                                icon="fa-ticket"/>
+                    </group>
+                    <group string="Cartel del evento">
+                        <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image'}"/>
+                    </group>
                     <notebook>
                         <page string="Entradas">
                             <field name="tickets">
@@ -57,17 +68,6 @@
                                 </list>
                             </field>
                         </page>
-                        <!--<page string="Asistentes">
-                            <field name="assistants">
-                                <list editable="bottom">
-                                    <field name="name"/>
-                                    <field name="email"/>
-                                    <field name="phone"/>
-                                    <field name="check_in"/>
-                                    <field name="check_in_time"/>
-                                </list>
-                            </field>
-                        </page>-->
                     </notebook>
                 </sheet>
             </form>
