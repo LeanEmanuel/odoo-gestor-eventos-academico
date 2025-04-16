@@ -64,7 +64,7 @@ class TicketPDFGenerator(models.AbstractModel):
         title.wrapOn(c, column_width - 1 * cm, 2 * cm)
         title.drawOn(c, content_x, content_y)
 
-        entry = Paragraph(f"Entrada: {ticket.ticket_type}", info_style)
+        entry = Paragraph(f"Entrada: {ticket.ticket_type_id.name}", info_style)
         entry.wrapOn(c, column_width - 1 * cm, 2 * cm)
         entry.drawOn(c, content_x, content_y - 1.5 * cm)
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_ticket_type_form" model="ir.ui.view">
+        <field name="name">gestor.ticket.type.form</field>
+        <field name="model">gestor.ticket.type</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de Ticket">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_ticket_type_tree" model="ir.ui.view">
+        <field name="name">gestor.ticket.type.list</field>
+        <field name="model">gestor.ticket.type</field>
+        <field name="arch" type="xml">
+            <list string="Tipos de Ticket">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_ticket_type" model="ir.actions.act_window">
+        <field name="name">Tipos de Ticket</field>
+        <field name="res_model">gestor.ticket.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_ticket_type"
+              name="Tipos de Ticket"
+              parent="menu_eventos"
+              action="action_ticket_type"
+              sequence="20"/>
+</odoo>

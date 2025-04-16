@@ -9,13 +9,16 @@ from datetime import date
 from odoo import models, fields, api
 
 
-
 class Ticket(models.Model):
     _name = 'gestor.ticket'
     _description = 'Ticket de Evento'
-    _rec_name = 'ticket_type'
+    _rec_name = 'ticket_type_id'
 
-    ticket_type = fields.Char(string='Tipo de ticket', required=True)
+    ticket_type_id = fields.Many2one(
+        'gestor.ticket.type',
+        string='Tipo de ticket',
+        required=True
+    )
     price = fields.Float(string='Precio', required=True)
     code = fields.Char(string='Codigo único', required=False, readonly=True, copy=False, index=True)
     qr_code = fields.Binary(string='QR Code')

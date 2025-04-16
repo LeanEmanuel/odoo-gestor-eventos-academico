@@ -33,6 +33,7 @@
         'views/income_views.xml',
         'views/tag_views.xml',
         'views/category_views.xml',
+        'views/ticket_type_views.xml',
         'views/assistant_views.xml',
         'views/event_views.xml',
         'views/ticket_views.xml',
