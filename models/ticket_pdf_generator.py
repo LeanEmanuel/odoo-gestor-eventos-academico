@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# PDF ticket generator for events using ReportLab and Odoo integration
+
 import base64
 from io import BytesIO
 from reportlab.pdfgen import canvas
@@ -18,9 +20,16 @@ _logger = logging.getLogger(__name__)
 
 class TicketPDFGenerator(models.AbstractModel):
     _name = 'report.gestor_eventos.ticket_pdf_report'
-    _description = 'Generador de PDF para tickets de eventos'
+    _description = 'Custom PDF generator for event tickets'
 
     def generate_ticket_pdf(self, ticket_id):
+        """
+        Generate a styled PDF file for a specific ticket, including:
+        - Event image (or default)
+        - Event name, ticket type and code
+        - QR code
+        - Disclaimer message
+        """
         ticket = self.env['gestor.ticket'].browse(ticket_id)
 
         buffer = BytesIO()
@@ -89,9 +98,11 @@ class TicketPDFGenerator(models.AbstractModel):
         footer.wrapOn(c, width - 4 * cm, 3 * cm)
         footer.drawOn(c, margin_x, 3 * cm)
 
+        # Finalize PDF page
         c.showPage()
         c.save()
 
+        # Get binary content
         pdf = buffer.getvalue()
         buffer.close()
         return pdf
@@ -101,6 +112,9 @@ class Ticket(models.Model):
     _inherit = 'gestor.ticket'
 
     def generate_pdf_ticket(self):
+        """
+        Generate and attach a downloadable PDF file for the current ticket.
+        """
         self.ensure_one()
         pdf = self.env['report.gestor_eventos.ticket_pdf_report'].generate_ticket_pdf(self.id)
 
@@ -112,6 +126,7 @@ class Ticket(models.Model):
             'res_id': self.id,
         })
 
+        # Return download action
         return {
             'type': 'ir.actions.act_url',
             'url': f'/web/content/{attachment.id}?download=true',

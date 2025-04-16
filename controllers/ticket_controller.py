@@ -11,12 +11,16 @@ class TicketController(http.Controller):
 
     @http.route('/api/ticket/validate', type='json', auth='public', methods=['POST'], csrf=False)
     def validate_ticket(self):
+        """
+        API endpoint to validate a ticket via its unique code (QR or manual input).
+        It checks if the ticket exists and is in 'sold' status, then marks it as 'validated'.
+        """
         try:
             # Leer el cuerpo de la solicitud desde httprequest (raw)
             raw_data = request.httprequest.data
             data = json.loads(raw_data.decode('utf-8'))
 
-            _logger.info("Datos recibidos: %s", data)
+            _logger.info("Received ticket data: %s", data)
 
             code = data.get('code')
             if not code:
@@ -38,5 +42,5 @@ class TicketController(http.Controller):
             return {'message': 'Ticket successfully validated'}
 
         except Exception as e:
-            _logger.error("Error al procesar validación del ticket: %s", str(e))
+            _logger.error("Error while processing ticket validation: %s", str(e))
             return {'error': str(e)}

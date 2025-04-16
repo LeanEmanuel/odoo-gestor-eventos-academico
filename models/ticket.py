@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import random
 import string
 import qrcode
@@ -14,6 +13,7 @@ class Ticket(models.Model):
     _description = 'Ticket de Evento'
     _rec_name = 'ticket_type_id'
 
+    # Ticket information
     ticket_type_id = fields.Many2one(
         'gestor.ticket.type',
         string='Tipo de ticket',
@@ -29,12 +29,13 @@ class Ticket(models.Model):
         ('validated', 'Validado'),
     ], string='Estado', default='available')
 
-    # Relaciones
+    # Relations
     event_id = fields.Many2one('gestor.event', string='Evento relacionado', required=True, ondelete='cascade')
     assistant_id = fields.Many2one('gestor.assistant', string='Asistente', ondelete='set null')
 
     @api.model
     def create(self, vals):
+        """Assign unique code and generate QR when ticket is created."""
         if 'code' not in vals or not vals['code']:
             vals['code'] = self._generate_unique_code()
         res = super().create(vals)
@@ -42,6 +43,7 @@ class Ticket(models.Model):
         return res
 
     def write(self, vals):
+        """When ticket is sold, auto-generate related income if not already created."""
         result = super().write(vals)
         for record in self:
             if vals.get('status') == 'sold':
@@ -61,10 +63,12 @@ class Ticket(models.Model):
         return result
 
     def _generate_unique_code(self, length=10):
+        """Generate a random alphanumeric code for the ticket."""
         characters = string.ascii_uppercase + string.digits
         return ''.join(random.choices(characters, k=length))
 
     def _generate_qr_code(self):
+        """Generate a QR code based on the ticket's unique code."""
         for record in self:
             if record.code:
                 qr = qrcode.QRCode(version=1, box_size=10, border=5)

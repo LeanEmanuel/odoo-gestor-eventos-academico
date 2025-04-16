@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from odoo import models, fields
 
 
@@ -6,6 +7,7 @@ class Income(models.Model):
     _description = 'Ingresos de Evento'
     _rec_name = 'concept'
 
+    # Income details
     concept = fields.Char(string='Concepto', required=True)
     amount = fields.Float(string='Importe', required=True)
     payment_date = fields.Date(string='Fecha de ingreso', required=True)
@@ -14,6 +16,6 @@ class Income(models.Model):
         ('paid', 'Pagado'),
     ], string='Estado del pago', default = 'pending')
 
-    # Relaciones
+    # Relations
     event_id = fields.Many2one('gestor.event', string='Evento Relacionado', required=True, ondelete='cascade')
     ticket_id = fields.Many2one('gestor.ticket', string='Ticket Asociado', ondelete='set null')
