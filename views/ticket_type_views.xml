@@ -15,7 +15,7 @@
         </field>
     </record>
 
-    <record id="view_ticket_type_tree" model="ir.ui.view">
+    <record id="view_ticket_type_list" model="ir.ui.view">
         <field name="name">gestor.ticket.type.list</field>
         <field name="model">gestor.ticket.type</field>
         <field name="arch" type="xml">
@@ -30,10 +30,4 @@
         <field name="res_model">gestor.ticket.type</field>
         <field name="view_mode">list,form</field>
     </record>
-
-    <menuitem id="menu_ticket_type"
-              name="Tipos de Ticket"
-              parent="menu_eventos"
-              action="action_ticket_type"
-              sequence="20"/>
 </odoo>

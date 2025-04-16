@@ -5,6 +5,33 @@
               name="Gestión de Eventos"
               sequence="10"/>
 
+    <!-- ======= MENÚ CONFIGURACIÓN ======= -->
+    <menuitem id="menu_event_config_root"
+              name="Configuración"
+              parent="menu_gestor_eventos_root"
+              sequence="90"/>
+
+    <!-- Submenú Categorias -->
+    <menuitem id="menu_event_category"
+              name="Categorías"
+              parent="menu_event_config_root"
+              action="action_category_list"
+              sequence="20"/>
+
+    <!-- Submenú para etiquetas de eventos -->
+    <menuitem id="menu_event_tag"
+              name="Etiquetas"
+              parent="menu_event_config_root"
+              action="action_tag_list"
+              sequence="30"/>
+
+    <!-- Submenú para tipos de ticket -->
+    <menuitem id="menu_ticket_type"
+              name="Tipos de Ticket"
+              parent="menu_event_config_root"
+              action="action_ticket_type"
+              sequence="40"/>
+
     <!-- ======= MENÚ EVENTOS ======= -->
 
     <!-- Menú padre de Eventos (sin acción directa) -->
@@ -20,19 +47,6 @@
               action="action_event_event"
               sequence="10"/>
 
-    <!-- Submenú Categorias -->
-    <menuitem id="menu_event_category"
-              name="Categorías"
-              parent="menu_eventos"
-              action="action_category_list"
-              sequence="20"/>
-
-    <!-- Submenú para etiquetas de eventos -->
-    <menuitem id="menu_event_tag"
-              name="Etiquetas"
-              parent="menu_eventos"
-              action="action_tag_list"
-              sequence="30"/>
 
     <!-- ======= MENÚ ENTRADAS ======= -->
 
