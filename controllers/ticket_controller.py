@@ -30,8 +30,8 @@ class TicketController(http.Controller):
                 return {'error': 'Ticket not found'}
 
             # Validar si el ticket esta disponible
-            if ticket.status != 'available':
-                return {'error': 'Ticket is not available'}
+            if ticket.status != 'sold':
+                return {'error': 'Ticket is not in a valid state for validation'}
 
             # Cambiar estado a validated
             ticket.sudo().write({'status': 'validated'})

@@ -62,7 +62,7 @@
                             <field name="tickets">
                                 <list editable="bottom">
                                     <field name="code"/>
-                                    <field name="ticket_type"/>
+                                    <field name="ticket_type_id"/>
                                     <field name="price"/>
                                     <field name="status"/>
                                 </list>

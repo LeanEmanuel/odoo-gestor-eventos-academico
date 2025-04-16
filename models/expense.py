@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-7
-from odoo import models, fields
+from datetime import date
+
+from odoo import models, fields, api
+
+
 
 
 class Expense(models.Model):
@@ -10,7 +14,7 @@ class Expense(models.Model):
 
     concept = fields.Char(string='Concepto', required=True)
     amount = fields.Float(string='Importe', required=True)
-    date = fields.Date(string='Fecha de gasto', required=True)
+    date = fields.Date(string='Fecha de gasto', required=True, default=lambda self: date.today())
     payment_status = fields.Selection([
         ('pending', 'Pendiente'),
         ('paid', 'Pagado'),
@@ -20,3 +24,9 @@ class Expense(models.Model):
 
     event_id = fields.Many2one('gestor.event', string='Evento Relacionado', ondelete='set null')
     supplier_id = fields.Many2one('gestor.supplier', string="Proveedor")
+
+
+    @api.onchange('payment_status')
+    def _onchange_payment_status(self):
+        if self.payment_status == 'paid' and not self.payment_date:
+            self.payment_date = date.today()
