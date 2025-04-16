@@ -83,7 +83,7 @@ class TicketPDFGenerator(models.AbstractModel):
 
         # Nota inferior centrada
         footer = Paragraph(
-            "Presenta esta entrada con su código QR al acceder al evento.<br/><b>No se permiten duplicados ni reembolsos.</b>",
+            "Presenta este ticket con su código QR.<br/><b>No se permiten duplicados.</b>",
             footer_style
         )
         footer.wrapOn(c, width - 4 * cm, 3 * cm)
