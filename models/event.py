@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 from odoo.exceptions import UserError
+import logging
+_logger = logging.getLogger(__name__)
+
 
 class Event(models.Model):
     _name = 'gestor.event'
@@ -55,23 +58,25 @@ class Event(models.Model):
     total_expense = fields.Float(string='Total Gastos', compute='_compute_financials', store=True)
     balance = fields.Float(string='Balance', compute='_compute_financials', store=True)
 
+    @api.multi
     def generate_tickets(self):
         """
         Generate a predefined number of tickets for the event.
-        Throws error if the quantity is invalid.
         """
-        for event in self:
-            quantity = event.ticket_generation_qty
-            if quantity <= 0:
-                raise UserError(_("La cantidad de tickets debe ser mayor que 0."))
-
-            Ticket = self.env['gestor.ticket']
-            for _ in range(quantity):
+        Ticket = self.env['gestor.ticket']
+        try:
+            ticket_type = self.env.ref('gestor_eventos.ticket_type_general', raise_if_not_found=False)
+            if not ticket_type:
+                ticket_type = self.env['gestor.ticket.type'].search([], limit=1)  # fallback
+            for i in range(self.tickets_number):
                 Ticket.create({
-                    'ticket_type': 'General',
+                    'event_id': self.id,
+                    'ticket_type_id': ticket_type.id,
                     'price': 0.0,
-                    'event_id': event.id
                 })
+        except Exception as e:
+            _logger.error("Error generating tickets for event %s: %s", self.name, str(e))
+        return True
 
     @api.depends('income_ids.amount', 'expense_ids.amount')
     def _compute_financials(self):
