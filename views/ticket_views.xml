@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <list string="Tickets">
                 <field name="code"/>
-                <field name="ticket_type"/>
+                <field name="ticket_type_id"/>
                 <field name="price"/>
                 <field name="status"/>
                 <field name="event_id"/>
@@ -21,11 +21,14 @@
         <field name="model">gestor.ticket</field>
         <field name="arch" type="xml">
             <form string="Ticket">
+                <header>
+
+                </header>
                 <sheet>
                     <group>
                         <field name="code" readonly="1"/>
                         <field name="status"/>
-                        <field name="ticket_type"/>
+                        <field name="ticket_type_id"/>
                         <field name="price"/>
                         <field name="event_id"/>
                     </group>
@@ -47,5 +50,13 @@
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <!-- Acción para vista de entradas -->
+    <record id="action_ticket_list" model="ir.actions.act_window">
+        <field name="name">Entradas</field>
+        <field name="res_model">gestor.ticket</field>
+        <field name="view_mode">list,form</field>
+        <field name="limit">20</field>
     </record>
 </odoo>

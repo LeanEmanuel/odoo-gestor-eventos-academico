@@ -43,4 +43,11 @@
             </form>
         </field>
     </record>
+
+    <!-- Acción para vistas de asistentes -->
+    <record id="action_assistant_list" model="ir.actions.act_window">
+        <field name="name">Asistentes</field>
+        <field name="res_model">gestor.assistant</field>
+        <field name="view_mode">list,form</field>
+    </record>
 </odoo>

@@ -5,6 +5,33 @@
               name="Gestión de Eventos"
               sequence="10"/>
 
+    <!-- ======= MENÚ CONFIGURACIÓN ======= -->
+    <menuitem id="menu_event_config_root"
+              name="Configuración"
+              parent="menu_gestor_eventos_root"
+              sequence="90"/>
+
+    <!-- Submenú Categorias -->
+    <menuitem id="menu_event_category"
+              name="Categorías"
+              parent="menu_event_config_root"
+              action="action_category_list"
+              sequence="20"/>
+
+    <!-- Submenú para etiquetas de eventos -->
+    <menuitem id="menu_event_tag"
+              name="Etiquetas"
+              parent="menu_event_config_root"
+              action="action_tag_list"
+              sequence="30"/>
+
+    <!-- Submenú para tipos de ticket -->
+    <menuitem id="menu_ticket_type"
+              name="Tipos de Ticket"
+              parent="menu_event_config_root"
+              action="action_ticket_type"
+              sequence="40"/>
+
     <!-- ======= MENÚ EVENTOS ======= -->
 
     <!-- Menú padre de Eventos (sin acción directa) -->
@@ -13,38 +40,13 @@
               parent="menu_gestor_eventos_root"
               sequence="10"/>
 
-    <!-- Acción para vista de eventos -->
-    <record id="action_event_event" model="ir.actions.act_window">
-        <field name="name">Eventos</field>
-        <field name="res_model">gestor.event</field>
-        <field name="view_mode">list,form</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
-                Haz clic en crear para agregar un nuevo evento.
-            </p>
-        </field>
-    </record>
-
     <!-- Submenú Ver eventos -->
     <menuitem id="menu_eventos_ver"
-              name="Ver eventos"
+              name="Eventos"
               parent="menu_eventos"
               action="action_event_event"
               sequence="10"/>
 
-    <!-- Submenú Categorias -->
-    <menuitem id="menu_event_category"
-              name="Categorías"
-              parent="menu_eventos"
-              action="action_category_list"
-              sequence="20"/>
-
-    <!-- Submenú para etiquetas de eventos -->
-    <menuitem id="menu_event_tag"
-              name="Etiquetas"
-              parent="menu_eventos"
-              action="action_tag_list"
-              sequence="30"/>
 
     <!-- ======= MENÚ ENTRADAS ======= -->
 
@@ -54,16 +56,9 @@
               parent="menu_gestor_eventos_root"
               sequence="20"/>
 
-    <!-- Acción para vista de entradas -->
-    <record id="action_ticket_list" model="ir.actions.act_window">
-        <field name="name">Entradas</field>
-        <field name="res_model">gestor.ticket</field>
-        <field name="view_mode">list,form</field>
-    </record>
-
     <!-- Submenú Ver entradas -->
     <menuitem id="menu_ticket_sub"
-              name="Ver entradas"
+              name="Entradas/Tickets"
               parent="menu_ticket_root"
               action="action_ticket_list"
               sequence="10"/>
@@ -76,16 +71,9 @@
               parent="menu_gestor_eventos_root"
               sequence="30"/>
 
-    <!-- Acción para vistas de asistentes -->
-    <record id="action_assistant_list" model="ir.actions.act_window">
-        <field name="name">Asistentes</field>
-        <field name="res_model">gestor.assistant</field>
-        <field name="view_mode">list,form</field>
-    </record>
-
     <!-- Submenú Asistentes-->
     <menuitem id="menu_assistant_sub"
-              name="Ver asistentes"
+              name="Asistentes"
               parent="menu_assistant_root"
               action="action_assistant_list"
               sequence="10"/>

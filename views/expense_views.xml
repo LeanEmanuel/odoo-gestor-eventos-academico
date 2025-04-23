@@ -26,6 +26,7 @@
                     <group>
                         <field name="concept"/>
                         <field name="amount"/>
+                        <field name="date"/>
                         <field name="payment_status"/>
                         <field name="payment_date"/>
                         <field name="event_id"/>

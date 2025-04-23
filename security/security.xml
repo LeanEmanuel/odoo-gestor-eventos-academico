@@ -58,5 +58,11 @@
             <field name="model">gestor.supplier</field>
             <field name="state">base</field>
         </record>
+
+        <record id="model_gestor_ticket_type" model="ir.model">
+            <field name="name">gestor.ticket.type</field>
+            <field name="model">gestor.ticket.type</field>
+            <field name="state">base</field>
+        </record>
     </data>
 </odoo>

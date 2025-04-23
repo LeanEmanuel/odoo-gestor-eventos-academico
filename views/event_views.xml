@@ -41,31 +41,48 @@
                         <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         <field name="description"/>
                     </group>
+                    <group string="Resumen financiero">
+                        <field name="total_income" readonly="1"/>
+                        <field name="total_expense" readonly="1"/>
+                        <field name="balance" readonly="1"/>
+                    </group>
+                    <group string="Generar tickets">
+                        <field name="ticket_generation_qty"/>
+                        <button name="generate_tickets"
+                                type="object"
+                                string="Generar tickets"
+                                class="btn-primary"
+                                icon="fa-ticket"/>
+                    </group>
+                    <group string="Cartel del evento">
+                        <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image'}"/>
+                    </group>
                     <notebook>
                         <page string="Entradas">
                             <field name="tickets">
                                 <list editable="bottom">
                                     <field name="code"/>
-                                    <field name="ticket_type"/>
+                                    <field name="ticket_type_id"/>
                                     <field name="price"/>
                                     <field name="status"/>
                                 </list>
                             </field>
                         </page>
-                        <!--<page string="Asistentes">
-                            <field name="assistants">
-                                <list editable="bottom">
-                                    <field name="name"/>
-                                    <field name="email"/>
-                                    <field name="phone"/>
-                                    <field name="check_in"/>
-                                    <field name="check_in_time"/>
-                                </list>
-                            </field>
-                        </page>-->
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <!-- Acción para vista de eventos -->
+    <record id="action_event_event" model="ir.actions.act_window">
+        <field name="name">Eventos</field>
+        <field name="res_model">gestor.event</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Haz clic en crear para agregar un nuevo evento.
+            </p>
         </field>
     </record>
 </odoo>
