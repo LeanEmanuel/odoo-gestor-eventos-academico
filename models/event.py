@@ -58,18 +58,17 @@ class Event(models.Model):
     total_expense = fields.Float(string='Total Gastos', compute='_compute_financials', store=True)
     balance = fields.Float(string='Balance', compute='_compute_financials', store=True)
 
-    @api.multi
     def generate_tickets(self):
         """
         Generate a predefined number of tickets for the event.
         """
-        Ticket = self.env['gestor.ticket']
+        ticket = self.env['gestor.ticket']
         try:
             ticket_type = self.env.ref('gestor_eventos.ticket_type_general', raise_if_not_found=False)
             if not ticket_type:
                 ticket_type = self.env['gestor.ticket.type'].search([], limit=1)  # fallback
-            for i in range(self.tickets_number):
-                Ticket.create({
+            for i in range(self.ticket_generation_qty):
+                ticket.create({
                     'event_id': self.id,
                     'ticket_type_id': ticket_type.id,
                     'price': 0.0,
