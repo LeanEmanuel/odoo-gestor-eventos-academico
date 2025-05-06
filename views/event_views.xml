@@ -59,8 +59,8 @@
                     </group>
                     <notebook>
                         <page string="Entradas">
-                            <field name="tickets">
-                                <list editable="bottom">
+                            <field name="tickets" context="{'default_event_id': id}">
+                                <list>
                                     <field name="code"/>
                                     <field name="ticket_type_id"/>
                                     <field name="price"/>
