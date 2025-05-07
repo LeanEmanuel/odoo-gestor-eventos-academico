@@ -46,7 +46,7 @@ GET /gestor_eventos/api/ticket/validate/<ticket_code>
 
 <div align="center">
     
-### 🛠️ Tecnologías y Herramientas 🛠️
+## 🛠️ Tecnologías y Herramientas 🛠️
 
 </br>
 
@@ -54,13 +54,18 @@ GET /gestor_eventos/api/ticket/validate/<ticket_code>
 <img alt="pycharm" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pycharm.png" width="80"/>
 <img alt="python" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" width="80"/>
 <img alt="postman" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png" width="80"/>
+<img alt="postgres" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png" width="80"/>
 <img alt="github" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" width="80"/>
+
 
 <br>
 
+
 </div>
 
+
 ---
+
 
 <table align="center">
   <tr>
