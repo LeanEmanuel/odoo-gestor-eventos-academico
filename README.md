@@ -42,6 +42,43 @@ GET /gestor_eventos/api/ticket/validate/<ticket_code>
         "message": "Ticket successfully validated"
     }
 }
+```
 
+<div align="center">
+    
+### 🛠️ Tecnologías y Herramientas 🛠️
 
+</br>
+
+<img alt="github" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" width="80"/>  
+<img alt="unity" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/unity.png" width="80"/>
+<img alt="pycharm" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pycharm.png" width="80"/>
+<img alt="c#" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/c%23.png" width="80"/>
+<br>
+
+</div>
+
+---
+
+<table align="center">
+  <tr>
+    <td>
+      <table align="center">
+        <tr>
+          <td align="center">
+            <a href="https://github.com/LeanEmanuel">
+              <img src="https://github.com/LeanEmanuel/Images/blob/main/Leandro.png" alt="Mini Leandro" width="80">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/LeanEmanuel">
+              <img src="https://img.shields.io/badge/LeanEmanuel-Git?style=flat&logo=github&logoColor=white&labelColor=black&color=50e520&label=GitHub" alt="Badge">
+            </a>
+          </td>
+        </tr>
+    </td>
+  </tr>
+</table>
 
