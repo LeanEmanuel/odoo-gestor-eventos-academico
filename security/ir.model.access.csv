@@ -1,0 +1,19 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestor_event_user,gestor.event user,model_gestor_event,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_ticket_user,gestor.ticket user,model_gestor_ticket,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_assistant_user,gestor.assistant user,model_gestor_assistant,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_category_user,gestor.category user,model_gestor_category,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_tag_user,gestor.tag user,model_gestor_tag,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_income_user,gestor.income user,model_gestor_income,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_expense_user,gestor.expense user,model_gestor_expense,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_supplier_user,gestor.supplier user,model_gestor_supplier,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_ticket_type_user,gestor.ticket.type user,model_gestor_ticket_type,gestor_eventos.group_event_user,1,0,0,0
+access_gestor_event_manager,gestor.event manager,model_gestor_event,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_ticket_manager,gestor.ticket manager,model_gestor_ticket,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_assistant_manager,gestor.assistant manager,model_gestor_assistant,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_category_manager,gestor.category manager,model_gestor_category,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_tag_manager,gestor.tag manager,model_gestor_tag,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_income_manager,gestor.income manager,model_gestor_income,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_expense_manager,gestor.expense manager,model_gestor_expense,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_supplier_manager,gestor.supplier manager,model_gestor_supplier,gestor_eventos.group_event_manager,1,1,1,1
+access_gestor_ticket_type_manager,gestor.ticket.type manager,model_gestor_ticket_type,gestor_eventos.group_event_manager,1,1,1,1

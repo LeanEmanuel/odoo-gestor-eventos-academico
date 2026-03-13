@@ -2,10 +2,10 @@
 {
     'name': "Gestor de Eventos",
 
-    'summary': "Módulo para la gestion de eventos de la asociación de vecinos.",
+    'summary': "Addon academico para gestion basica de eventos en Odoo.",
 
     'description': """
-        Módulo en Odoo para la gestión de eventos, incluyendo:
+        Proyecto academico en Odoo para la gestion de eventos, incluyendo:
         - Creación de eventos
         - Generación de tickets con QR
         - Control de asistencia
@@ -39,14 +39,9 @@
         'views/ticket_views.xml',
         'views/ticket_pdf_button.xml',
         'views/menu.xml',
-        # 'views/views.xml',
-        # 'views/templates.xml',
-
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    # demo data removed to keep public repository clean
+    'demo': [],
     'installable': True,
     'auto_install': False,
     'application': True,

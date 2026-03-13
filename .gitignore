@@ -27,6 +27,7 @@ odoo/addons/*/static/lib/*  # Si usas librerías externas en static/
 *.sql
 *.csv
 *.dump
+!security/ir.model.access.csv
 
 # Archivos de logs y caché de Odoo
 *.log
