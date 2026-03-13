@@ -114,19 +114,53 @@ Nota: el endpoint esta pensado como demostracion academica. Si se fuera a public
 - `security/`: grupos y reglas de acceso.
 - `static/`: recursos estaticos e imagenes.
 
-## Tecnologias
-
-- Odoo
-- Python
-- XML
-- PostgreSQL
-- Postman para pruebas manuales de la API
-
 ## Material academico incluido
 
 El repositorio incluye documentacion y recursos complementarios del trabajo academico, como una memoria en PDF y un video demo. Se mantienen como contexto del proyecto, no como artefactos necesarios para instalar el modulo.
 
-## Autor
+</br>
 
-Leandro Struni
+<div align="center">
+  
+## 🛠️ Tecnologías y Herramientas 🛠️
 
+</br>
+
+<img alt="odoo" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/odoo.png" width="80"/>  
+<img alt="pycharm" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pycharm.png" width="80"/>
+<img alt="python" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" width="80"/>
+<img alt="postman" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png" width="80"/>
+<img alt="postgres" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png" width="80"/>
+<img alt="github" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" width="80"/>
+
+
+<br>
+
+
+</div>
+
+
+---
+
+
+<table align="center">
+  <tr>
+    <td>
+      <table align="center">
+        <tr>
+          <td align="center">
+            <a href="https://github.com/LeanEmanuel">
+              <img src="https://github.com/LeanEmanuel/Images/blob/main/Leandro.png" alt="Mini Leandro" width="80">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/LeanEmanuel">
+              <img src="https://img.shields.io/badge/LeanEmanuel-Git?style=flat&logo=github&logoColor=white&labelColor=black&color=50e520&label=GitHub" alt="Badge">
+            </a>
+          </td>
+        </tr>
+    </td>
+  </tr>
+</table>
